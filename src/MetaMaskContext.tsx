@@ -69,15 +69,19 @@ const useProvideMetaMaskContext = () => {
   }, [window.ethereum]);
 
   useEffect(() => {
-    if(!account){
-      setAccount(window.ethereum.selectedAddress);
-    } 
-    else if(window.ethereum && window.ethereum.isConnected()) { 
-      getNetworkID();
-      getBalance();
-      connectWeb3();
+    if(window.ethereum && window.ethereum.isConnected()){
+      if(!account){
+        setAccount(window.ethereum.selectedAddress);
+      } 
+      if(account && !networkID) { 
+        getNetworkID();
+      }
+      if(account && networkID == NETWORK_ID) { 
+        getBalance();
+        connectWeb3();
+      }
     }
-  }, [account]);
+  }, [account, networkID]);
 
   useEffect(() => {
     if (web3 && networkID == NETWORK_ID) {
