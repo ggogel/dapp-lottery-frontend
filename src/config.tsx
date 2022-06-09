@@ -2,9 +2,9 @@ export const NETWORK_ID = "43113"
 
 export const RPC_URL = "https://api.avax-test.network/ext/bc/C/rpc"
 
-export const TL_ADDRESS = "0x494bEa5CCA395936CeE29f8906be0A5F784be1C6"
+export const TL_ADDRESS = "0x4f07b442e1ceeE298b8a6218ED4F556E4af1a4cb"
 
-export const LOTTERY_ADDRESS = "0xaBd911255600E2aC6d74A09684188449c23E1DDD"
+export const LOTTERY_ADDRESS = "0xc62a56A4E95088c687786cdFEe50bEC0c6Df226E"
 
 export const TL_ABI = [
     {
