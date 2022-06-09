@@ -12,7 +12,7 @@ interface RevealRandomButtonProps {
     
 const RevealRandomButton = (props:RevealRandomButtonProps) => {
     const {account, LotteryContract} = useMetaMaskContext();
-    const [randomNumber, setRandomNumber] = React.useState(Math.floor(Math.random() * 10000).toString());
+    const [randomNumber, setRandomNumber] = React.useState("");
 
     const handleRandomNumberChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setRandomNumber(event.target.value);
