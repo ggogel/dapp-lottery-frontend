@@ -126,7 +126,9 @@ const useProvideLotteryContext = () => {
       while(status == 1){
         try {
           let result = await LotteryContract!.methods.getIthWinningTicket(winningTicketIndex,id).call();
-          winningTickets.push([result[0],result[1]]);
+          if(result[1] > 0){
+            winningTickets.push([result[0],result[1]]);
+          }
         } catch (e){
           status = 0;
         }
